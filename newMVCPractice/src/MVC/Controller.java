@@ -5,8 +5,10 @@
  */
 package MVC;
 
+import java.util.ArrayList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import static javax.management.Query.value;
 
 /**
  *
@@ -55,6 +57,10 @@ public class Controller {
             @Override
             public void handle(ActionEvent event) {
                 
+                ArrayList<Data> currentData = model.getAllHunts();
+                gui.updateViewNext(currentData);
+                
+               
             }
         });
         
@@ -62,7 +68,8 @@ public class Controller {
             
             @Override
             public void handle(ActionEvent event) {
-                
+                ArrayList<Data> currentData = model.getAllHunts();
+                gui.updateViewPrevious(currentData);
             }
         });
          
@@ -70,7 +77,9 @@ public class Controller {
             
             @Override
             public void handle(ActionEvent event) {
+                ArrayList<Data> allHunts = model.getAllHunts();
                 
+                gui.UpdateViewAll(allHunts);
             }
         });
     }

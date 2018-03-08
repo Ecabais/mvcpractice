@@ -5,12 +5,14 @@
  */
 package MVC;
 
+import java.util.ArrayList;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import static javax.management.Query.value;
 
 /**
  *
@@ -18,7 +20,7 @@ import javafx.scene.layout.HBox;
  */
 public class GUI extends GridPane {
    
-   private int chain = 0;
+   private int count = 0;
    
    private Label huntLabel = new Label("Currently Hunting: ");
    private TextField huntTF = new TextField();
@@ -62,15 +64,74 @@ public class GUI extends GridPane {
    public void AddCounter(){
        
        
-       String chainString = Integer.toString(chain);
+       String chainString = Integer.toString(count);
        chainTF.setText(chainString);
-       chain++;
+       count++;
    }
    
    public void Clearfields(){
-       chain = 0;
+       count = 0;
        huntTF.clear();
        chainTF.clear();
+   }
+  
+   
+   public void updateViewNext(ArrayList<Data> currentData){
+       
+       String hunt = "";
+       String chain = "";
+       String currentcatch = "";
+       
+       Data currentHunt = (Data) currentData.get(count);
+       hunt = currentHunt.getHunt();
+       chain = currentHunt.getChain();
+       currentcatch += hunt + " = " + chain + " encounters\n";
+       
+       
+       count++;
+       
+       
+       
+       
+       
+       caughtTA.setText(currentcatch);
+   }
+   
+    public void updateViewPrevious(ArrayList<Data> currentData){
+       
+       String hunt = "";
+       String chain = "";
+       String currentcatch = "";
+        --count;
+       Data currentHunt = (Data) currentData.get(count);
+       hunt = currentHunt.getHunt();
+       chain = currentHunt.getChain();
+       currentcatch += hunt + " = " + chain + " encounters\n";
+       
+      
+     
+       
+       
+       
+       
+       
+       caughtTA.setText(currentcatch);
+     }
+     
+    public void UpdateViewAll(ArrayList<Data> allHunts){
+       String hunt = "";
+       String chain = "";
+       String allCaught = "";
+       
+       for (int i = 0; i < allHunts.size(); i++)
+       {
+           Data current = (Data) allHunts.get(i);
+           hunt = current.getHunt();
+           chain = current.getChain();
+           allCaught += hunt + " = " + chain + " encounters\n";
+       }
+       
+       caughtTA.setText(allCaught);
    }
 
     /**

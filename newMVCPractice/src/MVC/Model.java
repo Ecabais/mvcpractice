@@ -25,6 +25,8 @@ public class Model {
         return currentData;
     }
     
-    
+    public ArrayList<Data> getAllHunts(){
+        return huntDB;
+    }
     
 }
