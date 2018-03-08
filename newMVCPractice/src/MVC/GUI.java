@@ -68,6 +68,7 @@ public class GUI extends GridPane {
    }
    
    public void Clearfields(){
+       chain = 0;
        huntTF.clear();
        chainTF.clear();
    }

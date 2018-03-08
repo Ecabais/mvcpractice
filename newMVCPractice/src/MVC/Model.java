@@ -5,10 +5,26 @@
  */
 package MVC;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author elyvic
  */
 public class Model {
+    ArrayList<Data> huntDB = new ArrayList<>();
+    Data currentData = new Data();
+    
+    public void setCurrentHunt(Data currentData){
+        this.currentData = currentData;
+        huntDB.add(currentData);
+        
+    }
+    
+    public Data getCurrentHunt(){
+        return currentData;
+    }
+    
+    
     
 }

@@ -23,7 +23,13 @@ public class Controller {
             
             @Override
             public void handle(ActionEvent event) {
+                String hunt = gui.getHuntTF().getText();
+                String chain = gui.getChainTF().getText();
                 
+                Data currentData = new Data(hunt, chain);
+                model.setCurrentHunt(currentData);
+                
+                gui.Clearfields();
             }
         });
         
