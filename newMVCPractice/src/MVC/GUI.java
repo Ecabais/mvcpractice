@@ -61,6 +61,11 @@ public class GUI extends GridPane {
        
    }
    
+   public void Error(){
+     String error = "Error!!";
+     caughtTA.setText(error);
+   }
+   
    public void AddCounter(){
        
        
@@ -75,6 +80,18 @@ public class GUI extends GridPane {
        chainTF.clear();
    }
   
+   public void Write(ArrayList<Data> currentData){
+        
+       String hunt = "";
+       String chain = "";
+       String currentcatch = "";
+       
+       Data currentHunt = (Data) currentData.get(count);
+       hunt = currentHunt.getHunt();
+       chain = currentHunt.getChain();
+       
+   
+   }
    
    public void updateViewNext(ArrayList<Data> currentData){
        

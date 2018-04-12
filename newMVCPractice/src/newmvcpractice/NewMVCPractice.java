@@ -6,8 +6,10 @@
 package newmvcpractice;
 
 import MVC.Controller;
+import MVC.Data;
 import MVC.GUI;
 import MVC.Model;
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -18,12 +20,15 @@ import javafx.stage.Stage;
  */
 public class NewMVCPractice extends Application {
     
+  
     @Override
     public void start(Stage primaryStage) {
         
+       
         GUI gui = new GUI();
         Model model = new Model();
         Controller controller = new Controller(model, gui);
+        
         
         
         

@@ -5,6 +5,8 @@
  */
 package MVC;
 
+import java.io.Serializable;
+
 /**
  *
  * @author elyvic
@@ -50,6 +52,9 @@ public class Data {
     public void setChain(String chain) {
         this.chain = chain;
     }
+    
+   
+            
     
     
 }

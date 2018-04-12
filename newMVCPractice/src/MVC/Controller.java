@@ -18,6 +18,7 @@ public class Controller {
     Model model = new Model();
     GUI gui = new GUI();
     
+    
     public Controller(Model model, GUI gui){
         
         
@@ -32,6 +33,7 @@ public class Controller {
                 model.setCurrentHunt(currentData);
                 
                 gui.Clearfields();
+                
             }
         });
         
@@ -77,6 +79,7 @@ public class Controller {
             
             @Override
             public void handle(ActionEvent event) {
+                model.Database();
                 ArrayList<Data> allHunts = model.getAllHunts();
                 
                 gui.UpdateViewAll(allHunts);
